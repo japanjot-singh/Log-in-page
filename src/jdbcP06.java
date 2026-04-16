@@ -58,6 +58,12 @@ class jdbcP06 extends Frame implements ItemListener,ActionListener
     public void actionPerformed(ActionEvent ae){
 
     }
+    public static void newWindow(){
+        FrameW fw=new FrameW();
+        fw.setTitle("Welcome!");
+        fw.setSize(400,400);
+        fw.setVisible(true);
+    }
 }
 class FrameCR extends Frame implements ActionListener{
     Label lu,lp;
@@ -126,10 +132,7 @@ class FrameCR extends Frame implements ActionListener{
                 if(!found){
                     addData(Tuser,Tpass,stmt);
 
-                    FrameW fw=new FrameW();
-                    fw.setTitle("Welcome!");
-                    fw.setSize(400,400);
-                    fw.setVisible(true);
+                    jdbcP06.newWindow();
                 }
 
             } catch (SQLException e) {
@@ -244,10 +247,7 @@ class FrameLO extends Frame implements ActionListener{
 
                 }
                 if(fol){
-                    FrameW fw=new FrameW();
-                    fw.setTitle("Welcome!");
-                    fw.setSize(400,400);
-                    fw.setVisible(true);
+                    jdbcP06.newWindow();
                 }
                 else{
                     repaint();
